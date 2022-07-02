@@ -5,7 +5,7 @@ function Home() {
 
 
   return (
-    <div className="container">
+    <div className="container home">
 
       <div className='my-5 dosContainer border border-secondary bg-secondary text-light col-12 shadow'>
 
@@ -32,6 +32,7 @@ function Home() {
         </div>
 
       </div> 
+
     </div>
   );
 };
