@@ -12,10 +12,11 @@ code {
     monospace;
 }
 
-.dosContainer {
-  margin: 10px;
+#root {
+  background-color: black;
+  height: 100vh;
 }
 
-.dosBar {
-  margin: 10px;
+.text-purple {
+  color: blueviolet;
 }
