@@ -7,7 +7,7 @@ function About() {
         <div className="mt-5 mb-2 dosContainer border border-secondary bg-secondary text-light col-12 shadow">
           <div className='dosBar px-1 d-flex justify-content-between'>
             <div>
-              <i class="bi bi-terminal"></i> JSEM64:/c/Users/Jack/About.js
+              <i class="bi bi-terminal"></i> JSEM64:/c/Users/Jack/JSPortfolio/About.js
             </div>
             <div className="px-1">
               <span className="mx-1"><i class="bi bi-dash"></i></span>
@@ -37,7 +37,7 @@ function About() {
         </div>
       </section>
 
-      <section className="profileImage">
+      <section className="profileImage d-flex justify-content-center">
         <div className="imageContainer border border-secondary bg-secondary text-light col-lg-8 col-12 shadow">
           
           <div className="windowBar px-1 d-flex justify-content-between">
@@ -51,7 +51,7 @@ function About() {
             </div>
           </div>
 
-          <div className="dosContent bg-dark d-flex justify-content-center">
+          <div className="windowContent bg-dark d-flex justify-content-center">
             <img src={require(`../../assets/images/jack_profilepic.jpg`)} className="imgProfile img-fluid" alt="Jack looking smug"/>
           </div>
         </div>
