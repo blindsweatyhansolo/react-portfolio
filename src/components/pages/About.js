@@ -38,7 +38,7 @@ function About() {
       </section>
 
       <section className="profileImage">
-        <div className="imageContainer row border border-secondary bg-secondary text-light col-12 shadow">
+        <div className="imageContainer border border-secondary bg-secondary text-light col-lg-8 col-12 shadow">
           
           <div className="windowBar px-1 d-flex justify-content-between">
             <div>
@@ -52,7 +52,7 @@ function About() {
           </div>
 
           <div className="dosContent bg-dark d-flex justify-content-center">
-            <img src={require(`../../assets/images/jack_profilepic.jpg`)} className="imgProfile img-fluid" alt="picture of Jack looking smug"/>
+            <img src={require(`../../assets/images/jack_profilepic.jpg`)} className="imgProfile img-fluid" alt="Jack looking smug"/>
           </div>
         </div>
       </section>
