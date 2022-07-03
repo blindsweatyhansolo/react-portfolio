@@ -11,13 +11,13 @@ function Home() {
 
         <div className='dosBar px-1 d-flex justify-content-between'>
           <div>
-            <i class="bi bi-terminal"></i> JSEM64:/c/Users/Jack
+            <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack
           </div>
 
           <div className="px-1">
-            <span className="mx-1"><i class="bi bi-dash"></i></span>
-            <span className="mx-1"><i class="bi bi-square"></i></span>
-            <span className="mx-1"><i class="bi bi-x-square"></i></span>
+            <span className="mx-1"><i className="bi bi-dash"></i></span>
+            <span className="mx-1"><i className="bi bi-square"></i></span>
+            <span className="mx-1"><i className="bi bi-x-square"></i></span>
           </div>
         </div>
 
