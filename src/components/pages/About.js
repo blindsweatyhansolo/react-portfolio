@@ -7,7 +7,7 @@ function About() {
         <div className="mt-5 mb-2 dosContainer border border-secondary bg-secondary text-light col-12 shadow">
           <div className='dosBar px-1 d-flex justify-content-between'>
             <div>
-              <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/JSPortfolio/About.js
+              <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/About.js
             </div>
             <div className="px-1">
               <span className="mx-1"><i className="bi bi-dash"></i></span>

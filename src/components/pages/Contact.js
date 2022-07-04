@@ -2,60 +2,72 @@ import React, { useState } from 'react';
 import validator from 'validator';
 
 function Contact() {
-
-  // create state variables to handle form fields, set to empty string
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   // error handling for form fields
   const [errorMessage, setErrorMessage] = useState('');
-
-
-
-  // function to handle changes to input fields
-  const handleInputChange = (e) => {
-    // get value from targetted input triggered on change
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
-
-    // set state of name, email and message to captured value
-    if (inputType === 'name') {
-      setName(inputValue);
-    } else if (inputType === 'email') {
-      setEmail(inputValue);
+  
+  // create state variables to handle form fields, set to empty string
+  const [formState, setFormState] = useState(
+    { name: '', email: '', message: '' }
+    );
+  const { name, email, message } = formState;
+  
+  // setFormState updates the formState value for key property, assigned with e.target.value
+  function handleInputChange(e) {
+    if (e.target.name === 'email') {
+      const isValid = validator.isEmail(e.target.value);
+      // console.log(isValid);
+     
+      if(!isValid) {
+        setErrorMessage('Your email is invalid!');
+      } else {
+        setErrorMessage('');
+      }
     } else {
-      setMessage(inputValue);
-    };
+      if (!e.target.name === 'name') {
+        setErrorMessage(`${e.target.name} is required!`);
+      } else {
+        setErrorMessage('');
+      }
+    }
 
-    console.log(name, email, message);
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+
+    // console.log('errorMessage', errorMessage);
+
+    // formState will only change if all form data has passed validations (no error message)
+    if (!errorMessage) {
+      setFormState({ ...formState, [e.target.name]: e.target.value });
+    }
   };
 
   // function to handle form submit
   const handleFormSubmit =(e) => {
     e.preventDefault();
 
+    if (!email || !name) {
+      setErrorMessage('Please enter a valid email address and/or name!');
+      return;
+    }
+    
+    if (!message) {
+      setErrorMessage('Please enter a message!');
+      return;
+    }
+
     if (e.target.name === 'email') {
       const validEmail = validator.isEmail(e.target.value);
 
       if (!validEmail) {
-        setErrorMessage('Please enter a valid email');
+        setErrorMessage('Please enter a valid email!');
+        return;
       } else {
         setErrorMessage('');
       }
     }
 
-    // on success, clear out input fields
-    setName('');
-    setEmail('');
-    setMessage('');
-
-    console.log(name, email, message); 
-    alert(`Thanks ${name}, I look forward to connecting with you!`);   
-    
+    // console.log(name, email, message); 
+    alert(`Thanks ${name}, I look forward to connecting with you!`);
   };
-  // vealidate form values, if invalid send error message
-  // on success clear form fields and submit
 
   return (
     <div className="container">
@@ -63,7 +75,7 @@ function Contact() {
         <div className="mt-5 mb-2 dosContainer border border-secondary bg-secondary text-light col-12 shadow">
           <div className='dosBar px-1 d-flex justify-content-between'>
             <div>
-              <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/JSPortfolio/Contact.js
+              <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/Contact.js
             </div>
             <div className="px-1">
               <span className="mx-1"><i className="bi bi-dash"></i></span>
@@ -87,23 +99,23 @@ function Contact() {
       {/* <section className="socials">
         <div className="github">
           <a href="https://github.com/blindsweatyhansolo" target="_blank" rel="noreferrer">
-            <img src={require(`../../assets/images/github-squared-400.png`)} alt='Github Logo'/>
+            <img src={require(`../../assets/images/github-squared-400.png`)} alt='Github Logo' className='iconImg'/>
           </a>
           <p>@ blindsweatyhansolo</p>
         </div>
 
         <div className="linkedin">
           <a href="https://www.linkedin.com/in/jack-semidey-774313222/" target="_blank" rel="noreferrer">
-            <img src={require(`../../assets/images/linkedin-400.png`)} alt='LinkedIn Logo'/>
+            <img src={require(`../../assets/images/linkedin-400.png`)} alt='LinkedIn Logo' className='iconImg'/>
           </a>
           <p>@ JackSemidey </p>
         </div>
       </section> */}
-
+  
       <section className="d-flex justify-content-center">
-        <div className="emailClientContainer border border-secondary bg-secondary text-light col-lg-8 col-12 shadow">
+        <div className="border border-secondary text-light col-lg-8 col-12 shadow">
           
-          <div className="windowBar px-1 d-flex justify-content-between">
+          <div className="px-1 d-flex justify-content-between bg-secondary">
             <div>
               <i className="bi bi-envelope"></i> contactForm.js
             </div>
@@ -114,49 +126,80 @@ function Contact() {
             </div>
           </div>
 
-          <div className="windowContent bg-danger d-flex-column">
-            <h1>FAKE EMAIL CLIENT HEADER</h1>
-            <div>
-              <form className="contactForm">
-                <label htmlFor="name">Name:</label>
-                <input
-                  defaultValue={name}
-                  name="name"
-                  onChange={handleInputChange}
-                  type="text"
-                  placeholder="Name"
-                />
-                <label htmlFor="email">Email:</label>
-                <input
-                  defaultValue={email}
-                  name="email"
-                  onChange={handleInputChange}
-                  type="email"
-                  placeholder="Email"
-                />
-                <label htmlFor="message">Message:</label>
-                <textarea
-                  defaultValue={message}
-                  name="message"
-                  onChange={handleInputChange}
-                  type="text"
-                  rows="5"
-                />
+          <div className="contact">
+            <div className="row">
+              <div className="col-md-3">
+                
+                <div className="contact-info px-2">
+                  <h3>Contact Me</h3>
+                  <p>I would love to hear from you!</p>
+                </div>
 
-                {/* ERROR MESSAGE TO RENDER IF errorMessage EXISTS WITH SHORT CIRCUIT */}
-                {errorMessage && (
-                  <div>
-                    <p className="error">{errorMessage}</p>
+              </div>
+              <div className="col-md-9">
+                <div className="contact-form p-2">
+                  <div className="form-group">
+                    <label className="control-label col-sm-2" htmlFor="fname">Name:</label>
+                    <div className="col-sm-10">          
+                    <input 
+                    type="text" 
+                    className="form-control" 
+                    placeholder="Enter Name" 
+                    name="name"
+                    onBlur={handleInputChange}
+                    defaultValue={name}
+                     />
+                    </div>
                   </div>
-                )}
+                  <div className="form-group">
+                    <label className="control-label col-sm-2" htmlFor="email">Email:</label>
+                    <div className="col-sm-10">
+                    <input 
+                      defaultValue={email}
+                      name="email"
+                      onChange={handleInputChange}
+                      type="email"
+                      placeholder="Enter Email"
+                      className='form-control'
+                    />
+                    </div>
+                  </div>
+                  <div className="form-group">
+                    <label className="control-label col-sm-2" htmlFor="message">Message:</label>
+                    <div className="col-sm-10">
+                    <textarea 
+                      defaultValue={message}
+                      name="message"
+                      onChange={handleInputChange}
+                      type="text"
+                      rows="5"
+                      placeholder='Your Message'
+                      className='form-control'
+                    />
+                    </div>
+                  </div>
 
-                <button type='submit' className="btn btn-primary" onClick={handleFormSubmit}>Submit</button>
-              </form>
+                  {errorMessage && (
+                    <div>
+                      <p className='error-text text-danger'>{errorMessage}</p>
+                    </div>
+                  )}
+
+                  <div className="form-group">        
+                    <div className="col-sm-offset-2 col-sm-10 pt-2 d-flex justify-content-end">
+                      <button type="submit" className="btn btn-primary" onClick={handleFormSubmit}>
+                        <i className='bi bi-send'></i> Send
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
-  
+
     </div>
   );
 };
