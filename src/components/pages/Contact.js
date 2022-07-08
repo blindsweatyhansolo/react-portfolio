@@ -67,7 +67,11 @@ function Contact() {
     }
 
     // console.log(name, email, message); 
-    alert(`Thanks ${name}, I look forward to connecting with you!`);
+    const mailTo = `mailto:mtsemidey@gmail.com?body=${message}`;
+
+    if ((name, email, message)) {
+      window.open(mailTo, "email");
+    }
   };
 
   return (
