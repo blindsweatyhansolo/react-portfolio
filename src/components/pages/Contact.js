@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import validator from 'validator';
+// const githubIcon = require('../../assets/images/github-squared-400.png');
 
 function Contact() {
   // error handling for form fields
@@ -95,22 +96,6 @@ function Contact() {
         
         </div>
       </section>
-
-      {/* <section className="socials">
-        <div className="github">
-          <a href="https://github.com/blindsweatyhansolo" target="_blank" rel="noreferrer">
-            <img src={require(`../../assets/images/github-squared-400.png`)} alt='Github Logo' className='iconImg'/>
-          </a>
-          <p>@ blindsweatyhansolo</p>
-        </div>
-
-        <div className="linkedin">
-          <a href="https://www.linkedin.com/in/jack-semidey-774313222/" target="_blank" rel="noreferrer">
-            <img src={require(`../../assets/images/linkedin-400.png`)} alt='LinkedIn Logo' className='iconImg'/>
-          </a>
-          <p>@ JackSemidey </p>
-        </div>
-      </section> */}
   
       <section className="d-flex justify-content-center">
         <div className="border border-secondary text-light col-lg-8 col-12 shadow">
