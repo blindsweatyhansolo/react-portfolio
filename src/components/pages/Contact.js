@@ -67,7 +67,8 @@ function Contact() {
     }
 
     // console.log(name, email, message); 
-    const mailTo = `mailto:mtsemidey@gmail.com?body=${message}`;
+    const subLine = 'Hello, Jack!';
+    const mailTo = `mailto:mtsemidey@gmail.com?subject=${subLine}&body=${message}`;
 
     if ((name, email, message)) {
       window.open(mailTo, "email");
