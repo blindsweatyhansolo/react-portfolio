@@ -67,12 +67,10 @@ function Projects() {
   ];
 
 
-
-
   return (
     <section className="projects d-flex justify-content-center">
 
-      <div className="border border-secondary bg-secondary text-light col-lg-8 col-12 shadow">
+      <div className="border border-secondary bg-secondary text-light col-lg-8 col-12 shadow row">
         
         <div className="windowBar px-1 d-flex justify-content-between">
           <div>
@@ -87,26 +85,27 @@ function Projects() {
 
         <div className="container bg-dark p-2">
           <div className="row mx-1">
-            <div className="col">
+
               {projects.map((project) => {
                 return (
-                  <div 
-                    className="projectCard card m-1"
-                    id={project.id}
-                    key={project.title}
-                  >
-                    <img className="card-img-top pt-1"
-                    src={project.src}
-                    alt={project.title}
-                    />
-                    <div className="card-body">
-                      <p className="card-title text-dark fs-1">{project.title}</p>
-                      <p className="card-subtitle text-muted">{project.description}</p>
+                  <div className='col-12'>
+                    <div 
+                      className="projectCard card my-1"
+                      id={project.id}
+                      key={project.title}
+                    >
+                      <img className="card-img-top pt-1"
+                      src={project.src}
+                      alt={project.title}
+                      />
+                      <div className="card-body">
+                        <p className="card-title text-dark fs-1">{project.title}</p>
+                        <p className="card-subtitle text-muted">{project.description}</p>
+                      </div>
                     </div>
                   </div>
                 )
               })}
-            </div>
           </div>
         </div>
       </div>

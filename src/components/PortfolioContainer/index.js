@@ -4,7 +4,6 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Projects from '../pages/Projects';
-import Footer from '../Footer';
 
 
 function PortfolioContainer() {
@@ -36,10 +35,6 @@ function PortfolioContainer() {
         <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
         {/* after conditionally matching specific page, render that page */}
         {renderPage()}
-        
-        <div>
-          <Footer />
-        </div>
       </div>
     );
 }
