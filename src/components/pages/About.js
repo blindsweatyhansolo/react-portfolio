@@ -1,10 +1,11 @@
 import React from 'react';
+import "./style.css";
 
 function About() {
   return (
     <div className="container">
       <section className="about">
-        <div className="mt-5 mb-2 dosContainer border border-secondary bg-secondary text-light col-12 shadow">
+        <div className="mt-5 mb-2 dosContainer text-light col-12 shadow">
           <div className='dosBar px-1 d-flex justify-content-between'>
             <div>
               <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/About.js
@@ -16,7 +17,7 @@ function About() {
             </div>
           </div>
 
-          <div className="dosContent bg-dark p-1">
+          <div className="dosContent p-1">
             <p className="text-success">Jack <span className="text-purple">JSEM64</span> 
             <span className="text-warning"> ~/JSPortfolio/About.js</span> 
             <span className="text-primary"> (main) </span></p>

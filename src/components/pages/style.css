@@ -1,0 +1,31 @@
+.dosContainer {
+  background-color: black;
+  border: 2px solid;
+  border-radius: 5px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.dosContent {
+  background-color: black;
+  margin: 3px;
+}
+
+.dosUser {
+  color: #4E9F3D;
+}
+
+.dosUserDir {
+  color: #96006F;
+}
+
+.dosDir {
+  color: #D3F01D;
+}
+
+.typeText {
+  display: inline-block;
+}
+
+.hero {
+  text-align: center;
+}

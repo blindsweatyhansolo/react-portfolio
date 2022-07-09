@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Typewriter from 'typewriter-effect';
+import "./style.css";
 
 function Home() {
 
-
+  const [hidden, setHiddenState] = useState(true);
 
   return (
-    <div className="container home">
+    <div className="container d-flex justify-content-center">
 
-      <div className='my-5 dosContainer border border-secondary bg-secondary text-light col-12 shadow'>
+      <div className='my-5 dosContainer text-light col-12 col-lg-6 shadow-lg'>
 
-        <div className='dosBar px-1 d-flex justify-content-between'>
+        <div className='px-1 text-light d-flex justify-content-between'>
           <div>
-            <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack
+            <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/
           </div>
 
           <div className="px-1">
@@ -21,14 +23,40 @@ function Home() {
           </div>
         </div>
 
-        <div className="dosContent bg-dark p-1">
-          <p className="text-success">Jack <span className="text-purple">JSEM64</span> 
-          <span className="text-warning"> ~/JSPortfolio</span> 
+        <div className="dosContent p-1">
+          <p className="dosUser">Jack <span className="dosUserDir">JSEM64</span> 
+          <span className="dosDir"> ~/JSPortfolio</span> 
           <span className="text-primary"> (main) </span></p>
-          <p>$ Hello World!</p>
-          <p>$ My name is Jack</p>
-          <p>$ Full Stack Web Developer</p>
-          <p>$ Would you like to know more? <span className="showMore">YES _</span></p>
+
+          {/* <p>$ Hello World! My name is <strong>Jack</strong></p> */}
+          <p>$ <span className='typeText'>
+            <Typewriter 
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("npm start")
+                  .pauseFor(1500)
+                  .callFunction(() => {
+                    setHiddenState(false);
+                  })
+                  .start();
+              }}  
+            />
+            </span>
+          </p>
+          {hidden ? (
+            ""
+          ) : (
+            <div className='hero'>
+              ================<br />
+              Hello World! <br />
+              ================ <br />
+              <p>
+                Thanks for checking out my portfolio!<br/>
+                My name is Jack, and I'm a Full Stack Web Developer.<br/>
+                Click around to see more.
+              </p>
+            </div>
+          )}
         </div>
 
       </div> 
