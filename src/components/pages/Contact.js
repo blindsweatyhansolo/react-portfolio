@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import validator from 'validator';
-// const githubIcon = require('../../assets/images/github-squared-400.png');
+import Typewriter from 'typewriter-effect';
+import "./style.css";
+const githubLogo = require('../../assets/images/icons/socials/github.png');
+const linkedInLogo = require('../../assets/images/icons/socials/linkedin.png');
+const mailIcon = require('../../assets/images/icons/nav-icons/mail-96.png');
 
 function Contact() {
   // error handling for form fields
   const [errorMessage, setErrorMessage] = useState('');
+
+  const [hidden, setHiddenState] = useState(true);
   
   // create state variables to handle form fields, set to empty string
   const [formState, setFormState] = useState(
@@ -77,11 +83,12 @@ function Contact() {
 
   return (
     <div className="container">
-      <section className="contact">
-        <div className="mt-5 mb-2 dosContainer border border-secondary bg-secondary text-light col-12 shadow">
-          <div className='dosBar px-1 d-flex justify-content-between'>
+      
+      <section className="contact d-flex justify-content-center">
+        <div className="mt-5 mb-2 dosContainer text-light col-12 col-lg-6 shadow">
+          <div className='px-1 d-flex justify-content-between'>
             <div>
-              <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/Contact.js
+              <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack
             </div>
             <div className="px-1">
               <span className="mx-1"><i className="bi bi-dash"></i></span>
@@ -90,22 +97,56 @@ function Contact() {
             </div>
           </div>
 
-          <div className="dosContent bg-dark p-1">
-            <p className="text-success">Jack <span className="text-purple">JSEM64</span> 
-            <span className="text-warning"> ~/JSPortfolio/Contact.js</span> 
+          <div className="dosContent p-1">
+            <p className="dosUser">Jack <span className="dosUserDir">JSEM64</span> 
+            <span className="dosDir"> ~/JSPortfolio</span> 
             <span className="text-primary"> (main) </span></p>
 
             <p>$ Interested in contacting me? Check out more of my work on GitHub, reach out via LinkedIn, or fill out the form below!</p>
-            <p>$ open contactForm.js _ </p>
+            
+            <section className="socials d-flex justify-content-center">
+              <div className="github">
+                <a 
+                  href="https://github.com/blindsweatyhansolo" 
+                  target="_blank" 
+                  rel='noreferrer' 
+                  title="blindsweatyhansolo">
+                  <img src={githubLogo} alt="Github Logo" className="socialIcon"/>
+                </a>
+              </div>
+              <div className="linkedin">
+                <a 
+                  href="https://www.linkedin.com/in/jack-semidey-774313222/" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  title="Jack Semidey">
+                  <img src={linkedInLogo} alt="LinkedIn Logo" className="socialIcon"/>
+                </a>
+              </div>
+            </section>
+            
+            <p>$ <span className="typeText">
+              <Typewriter
+                 onInit={(typewriter) => {
+                  typewriter
+                    .typeString("open contactForm.js")
+                    .pauseFor(1500)
+                    .callFunction(() => {
+                      setHiddenState(false);
+                    })
+                    .start();
+                  }}
+              />
+              </span></p>
           </div>
-        
         </div>
       </section>
   
-      <section className="d-flex justify-content-center">
-        <div className="border border-secondary text-light col-lg-8 col-12 shadow">
+    {hidden ? ("") : (
+      <section className="d-flex justify-content-center mt-2">
+        <div className="window text-light col-lg-8 col-12 shadow">
           
-          <div className="px-1 d-flex justify-content-between bg-secondary">
+          <div className="windowBar px-1 d-flex justify-content-between">
             <div>
               <i className="bi bi-envelope"></i> contactForm.js
             </div>
@@ -116,80 +157,68 @@ function Contact() {
             </div>
           </div>
 
-          <div className="contact">
-            <div className="row">
-              <div className="col-md-3">
-                
-                <div className="contact-info px-2">
-                  <h3>Contact Me</h3>
-                  <p>I would love to hear from you!</p>
-                </div>
 
-              </div>
-              <div className="col-md-9">
-                <div className="contact-form p-2">
-                  <div className="form-group">
-                    <label className="control-label col-sm-2" htmlFor="fname">Name:</label>
-                    <div className="col-sm-10">          
-                    <input 
-                    type="text" 
-                    className="form-control" 
-                    placeholder="Enter Name" 
-                    name="name"
-                    onBlur={handleInputChange}
-                    defaultValue={name}
-                     />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label className="control-label col-sm-2" htmlFor="email">Email:</label>
-                    <div className="col-sm-10">
-                    <input 
-                      defaultValue={email}
-                      name="email"
-                      onChange={handleInputChange}
-                      type="email"
-                      placeholder="Enter Email"
-                      className='form-control'
-                    />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <label className="control-label col-sm-2" htmlFor="message">Message:</label>
-                    <div className="col-sm-10">
-                    <textarea 
-                      defaultValue={message}
-                      name="message"
-                      onChange={handleInputChange}
-                      type="text"
-                      rows="5"
-                      placeholder='Your Message'
-                      className='form-control'
-                    />
-                    </div>
-                  </div>
-
-                  {errorMessage && (
-                    <div>
-                      <p className='error-text text-danger'>{errorMessage}</p>
-                    </div>
-                  )}
-
-                  <div className="form-group">        
-                    <div className="col-sm-offset-2 col-sm-10 pt-2 d-flex justify-content-end">
-                      <button type="submit" className="btn btn-primary" onClick={handleFormSubmit}>
-                        <i className='bi bi-send'></i> Send
-                      </button>
-                    </div>
-                  </div>
-                </div>
+          <div className="contact-form container">
+            <div className="d-flex justify-content-evenly pt-2">
+              <div className="col-12 col-sm-10 col-lg-10">
+                <p className="fs-4 text-center">I would love to hear from you!</p>
+                <span className="text-muted"><em>Developer note: </em>This portfolio is currently front end only, meaning this form will open your machine's mail client.
+                If you would like to contact me another way, please reach out on GitHub or LinkedIn with the links above.</span>
               </div>
             </div>
-          </div>
 
+            <form>
+              <div className="form-group p-2">
+                <label className="" htmlFor="fname">Name:</label>       
+                <input 
+                type="text" 
+                className="form-control" 
+                placeholder="Enter Name" 
+                name="name"
+                onBlur={handleInputChange}
+                defaultValue={name}
+                  />
+              </div>
+              <div className="form-group p-2">
+                <label className="" htmlFor="email">Email:</label>
+                <input 
+                  defaultValue={email}
+                  name="email"
+                  onChange={handleInputChange}
+                  type="email"
+                  placeholder="Enter Email"
+                  className='form-control'
+                />
+              </div>
+              <div className="form-group p-2">
+                <label className="control-label col-sm-2" htmlFor="message">Message:</label>
+                <textarea 
+                  defaultValue={message}
+                  name="message"
+                  onChange={handleInputChange}
+                  type="text"
+                  rows="5"
+                  placeholder='Your Message'
+                  className='form-control'
+                />
+              </div>
+
+              {errorMessage && (
+                <div>
+                  <p className='error-text text-danger'>{errorMessage}</p>
+                </div>
+              )}
+
+              <div className="d-flex justify-content-center mx-2">
+                <button type="submit" className="btn btn-primary col-8 mb-1" onClick={handleFormSubmit}>
+                  <i className='bi bi-send'></i> Send!
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
-
+    )}
     </div>
   );
 };

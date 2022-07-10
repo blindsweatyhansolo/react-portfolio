@@ -16,8 +16,8 @@ function About() {
   return (
     <div className="container">
 
-        <section className="about">
-          <div className="mt-5 mb-2 dosContainer text-light col-12 shadow">
+        <section className="about d-flex justify-content-center">
+          <div className="mt-5 mb-2 dosContainer text-light col-12 col-lg-6 shadow">
             <div className='dosBar px-1 d-flex justify-content-between'>
               <div>
                 <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/
@@ -31,7 +31,7 @@ function About() {
 
             <div className="dosContent p-1">
               <p className="dosUser">Jack <span className="dosUserDir">JSEM64</span>
-              <span className="dosDir"> ~/JSPortfolio/</span> 
+              <span className="dosDir"> ~/JSPortfolio</span> 
               <span className="text-primary"> (main) </span></p>
 
               <p>$ <span className="typeText">
@@ -56,11 +56,11 @@ function About() {
                   Hi, I'm Jack! <br />
                   ================ <br />
                   <p>Coffee house supervisor turned Full Stack Web Developer.</p>
-                  <p>Film geek, amateur wood-worker, Dungeons and Dragons nerd, and overall adventurous guy.
+                  <p>Film geek, amateur wood-worker, Dungeons and Dragons nerd, and overall curious guy.
                     I like to build things on the web, and have a thirst for knowledge.
                     After attending college for Film Arts and working full-time as a supervisor for Starbucks, I decided to shift gears into the 
                     ever-enticing web development world. As a manager I've learned vital team skills, adapted quickly to working in fast-paced environments,
-                    and thinking out of the box. Based in the DMV area.
+                    and to think outside the box. Based in the DMV area.
                   </p>
                   <p>= Skills =</p>
                   <div className='d-flex justify-space-between justify-content-center flex-wrap'>
@@ -82,10 +82,10 @@ function About() {
 
       {hidden ? ("") : (
         <section className="profileImage col-12 d-flex justify-content-center">
-          <div className="imageContainer border border-secondary bg-secondary text-light col-lg-8 col-12 shadow">
+          <div className="window text-light col-lg-8 col-12 shadow">
             
-            <div className="windowBar px-1 d-flex justify-content-between">
-              <div>
+            <div className="windowBar py-1 d-flex justify-content-between">
+              <div className="windowTitle px-2">
                 <i className="bi bi-image"></i> jack_profilepic.jpg
               </div>
               <div className="px-1">

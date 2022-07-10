@@ -70,10 +70,10 @@ function Projects() {
   return (
     <section className="projects d-flex justify-content-center">
 
-      <div className="border border-secondary bg-secondary text-light col-lg-8 col-12 shadow row">
+      <div className="window text-light col-lg-8 col-12 shadow row">
         
-        <div className="windowBar px-1 d-flex justify-content-between">
-          <div>
+        <div className="windowBar py-1 d-flex justify-content-between">
+          <div className="windowTitle px-2">
             <i className="bi bi-folder"></i> Projects
           </div>
           <div className="px-1">

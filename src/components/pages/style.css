@@ -1,6 +1,6 @@
 .dosContainer {
   background-color: black;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: 5px;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -29,3 +29,28 @@
 .hero {
   text-align: center;
 }
+
+.imgProfile {
+  max-width: 100%;
+  max-height: 50vh;
+}
+
+.socialIcon {
+  max-width: 50%;
+}
+
+.contact-form {
+  background: white;
+  color: black;
+}
+
+.window {
+  background: black;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.windowTitle {
+  font-family: 'Courier New', Courier, monospace;
+}
+
