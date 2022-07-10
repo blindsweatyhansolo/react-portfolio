@@ -104,7 +104,7 @@ function Projects() {
 
         <div className="container bg-dark p-2">
           <div className="d-flex justify-content-around text-center">
-            <div onClick={() => {
+            <div className="folder" onClick={() => {
               setFrontEndVisible(true);
               setBackEndVisible(false);
               setFrontEndFolderOpen(true);
@@ -117,7 +117,7 @@ function Projects() {
               )}
               <p>Front-End Projects</p>
             </div>
-            <div onClick={() => {
+            <div className="folder" onClick={() => {
               setFrontEndVisible(false);
               setBackEndVisible(true);
               setBackEndFolderOpen(true);

@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer fixed-bottom">
       <div className="d-flex justify-content-center align-items-center">
         <a href="https://github.com/blindsweatyhansolo" target="_blank" rel="noreferrer">
           GITHUB
