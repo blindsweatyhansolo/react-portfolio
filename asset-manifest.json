@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/react-portfolio/static/css/main.88c01afc.css",
+    "main.js": "/react-portfolio/static/js/main.2d1763fd.js",
+    "static/js/787.a2cb61a6.chunk.js": "/react-portfolio/static/js/787.a2cb61a6.chunk.js",
+    "static/media/ballzandbooze.gif": "/react-portfolio/static/media/ballzandbooze.fbfd10ee0fde8e98a03c.gif",
+    "static/media/technicallyspeaking.gif": "/react-portfolio/static/media/technicallyspeaking.5f6ea92568cea6abec67.gif",
+    "static/media/ecommercebackend.gif": "/react-portfolio/static/media/ecommercebackend.e612d4dadb25bb0cf923.gif",
+    "static/media/employeetracker.gif": "/react-portfolio/static/media/employeetracker.9f46f6e2ce7b0c8181c6.gif",
+    "static/media/jack_profilepic.jpg": "/react-portfolio/static/media/jack_profilepic.c16017047f9e8fd0436e.jpg",
+    "static/media/BudgetTracker.gif": "/react-portfolio/static/media/BudgetTracker.42af25b5c92ad133f15e.gif",
+    "static/media/thoughtspot.gif": "/react-portfolio/static/media/thoughtspot.91f85838bf3c53855094.gif",
+    "static/media/bootstrap-icons.woff?": "/react-portfolio/static/media/bootstrap-icons.7ff3ca6fa798de3f8ac2.woff",
+    "static/media/weekdayscheduler cropped.png": "/react-portfolio/static/media/weekdayscheduler cropped.11c1574a3b01d7dc2ce8.png",
+    "static/media/bootstrap-icons.woff2?": "/react-portfolio/static/media/bootstrap-icons.f2539a501be3a673de05.woff2",
+    "static/media/weatherdashboard.png": "/react-portfolio/static/media/weatherdashboard.d039bd64c82100a8dc80.png",
+    "static/media/pitchr.png": "/react-portfolio/static/media/pitchr.aa7c47b8ae343e45d16a.png",
+    "static/media/github.png": "/react-portfolio/static/media/github.3e7e79f0326c62213dda.png",
+    "static/media/linkedin.png": "/react-portfolio/static/media/linkedin.8102215a219ab0f1db16.png",
+    "index.html": "/react-portfolio/index.html",
+    "main.88c01afc.css.map": "/react-portfolio/static/css/main.88c01afc.css.map",
+    "main.2d1763fd.js.map": "/react-portfolio/static/js/main.2d1763fd.js.map",
+    "787.a2cb61a6.chunk.js.map": "/react-portfolio/static/js/787.a2cb61a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88c01afc.css",
+    "static/js/main.2d1763fd.js"
+  ]
+}
