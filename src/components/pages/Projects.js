@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import "./style.css";
+const folderIconClosed = require('../../assets/images/icons/nav-icons/folder-closed.png');
+const folderIconOpen = require('../../assets/images/icons/nav-icons/folder-open.png');
 
 function Projects() {
-  const projects = [
-    {
-      id: 'technically-speaking',
-      title: 'Technically Speaking',
-      description: 'A simple blog for sharing ideas and thoughts.',
-      github: 'https://github.com/blindsweatyhansolo/tech-blog',
-      liveURL: 'https://bshs-tech-blog.herokuapp.com/',
-      src: require('../../assets/images/screenshots/technicallyspeaking.gif')
-    },
+  // array to hold project data
+  const backEndProjects = [
     {
       id: 'employee-tracker',
       title: 'Employee Tracker',
@@ -25,6 +21,25 @@ function Projects() {
       src: require('../../assets/images/screenshots/thoughtspot.gif')
     },
     {
+      id: 'password-generator',
+      title: 'Password Generator',
+      description: 'Generate a simple or complex password for your account.',
+      github: 'https://github.com/blindsweatyhansolo/PasswordGenerator',
+      liveURL: 'https://blindsweatyhansolo.github.io/PasswordGenerator/',
+      src: require('../../assets/images/screenshots/passwordgenerator.png')
+    }
+  ];
+
+  const frontEndProjects =[
+    {
+      id: 'technically-speaking',
+      title: 'Technically Speaking',
+      description: 'A simple blog for sharing ideas and thoughts.',
+      github: 'https://github.com/blindsweatyhansolo/tech-blog',
+      liveURL: 'https://bshs-tech-blog.herokuapp.com/',
+      src: require('../../assets/images/screenshots/technicallyspeaking.gif')
+    },
+    {
       id: 'ballz-and-booze',
       title: 'Ballz & Booze',
       description: 'Application for finding scheduled NBA games, and bars/breweries to watch them in.',
@@ -33,9 +48,17 @@ function Projects() {
       src: require('../../assets/images/screenshots/ballzandbooze.gif')
     },
     {
+      id: 'budget-tracker',
+      title: 'Budget Tracker',
+      description: 'Keep track of your expenses online or offline with this PWA.',
+      github: 'https://github.com/blindsweatyhansolo/budget-tracker',
+      liveURL: 'https://bshs-budget-tracker.herokuapp.com/',
+      src: require('../../assets/images/screenshots/BudgetTracker.gif')
+    },
+    {
       id: 'weather-dashboard',
       title: 'Weather Dashboard',
-      description: 'Find forecast information for any searched city',
+      description: 'Find forecast information for any searched city.',
       github: 'https://github.com/blindsweatyhansolo/weatherdashboard',
       liveURL: 'https://blindsweatyhansolo.github.io/weatherdashboard/',
       src: require('../../assets/images/screenshots/weatherdashboard.png')
@@ -49,26 +72,22 @@ function Projects() {
       src: require('../../assets/images/screenshots/pitchr.png')
     },
     {
-      id: 'budget-tracker',
-      title: 'Budget Tracker',
-      description: 'Keep track of your expenses online or offline with this PWA.',
-      github: 'https://github.com/blindsweatyhansolo/budget-tracker',
-      liveURL: 'https://bshs-budget-tracker.herokuapp.com/',
-      src: require('../../assets/images/screenshots/BudgetTracker.gif')
-    },
-    {
-      id: 'password-generator',
-      title: 'Password Generator',
-      description: 'Generate a simple or complex password for your account.',
-      github: 'https://github.com/blindsweatyhansolo/PasswordGenerator',
-      liveURL: 'https://blindsweatyhansolo.github.io/PasswordGenerator/',
-      src: require('../../assets/images/screenshots/passwordgenerator.png')
+      id: 'workday-scheduler',
+      title: 'Workday Scheduler',
+      description: 'Calendar app to help you schedule your day.',
+      github: 'https://github.com/blindsweatyhansolo/weekdayscheduler',
+      liveURL: 'https://blindsweatyhansolo.github.io/weekdayscheduler/',
+      src: require('../../assets/images/screenshots/weekdayscheduler.png')
     }
   ];
 
+  const [frontEndVisible, setFrontEndVisible] = useState(false);
+  const [backEndVisible, setBackEndVisible] = useState(false);
+  const [folderFrontEndOpen, setFrontEndFolderOpen] = useState(false);
+  const [folderBackEndOpen, setBackEndFolderOpen] = useState(false);
 
   return (
-    <section className="projects d-flex justify-content-center">
+    <section className="projects d-flex justify-content-center mt-4">
 
       <div className="window text-light col-lg-8 col-12 shadow row">
         
@@ -84,28 +103,88 @@ function Projects() {
         </div>
 
         <div className="container bg-dark p-2">
-          <div className="row mx-1">
-
-              {projects.map((project) => {
+          <div className="d-flex justify-content-around text-center">
+            <div onClick={() => {
+              setFrontEndVisible(true);
+              setBackEndVisible(false);
+              setFrontEndFolderOpen(true);
+              setBackEndFolderOpen(false);
+            }}>
+              {folderFrontEndOpen ? (
+                <img src={folderIconOpen} alt=""/>
+              ) : (
+                <img src={folderIconClosed} alt=""/>
+              )}
+              <p>Front-End Projects</p>
+            </div>
+            <div onClick={() => {
+              setFrontEndVisible(false);
+              setBackEndVisible(true);
+              setBackEndFolderOpen(true);
+              setFrontEndFolderOpen(false);
+            }}>
+              {folderBackEndOpen ? (
+                <img src={folderIconOpen} alt=""/>
+              ) : (
+              <img src={folderIconClosed} alt=""/>
+              )}
+              <p>Back-End Projects</p>
+            </div>
+          </div>
+          <div className="container mx-1">
+            {frontEndVisible ? (
+              <div className="row">
+              {frontEndProjects.map((project) => {
                 return (
-                  <div className='col-12'>
+                  <div className='col-12 col-lg-4'>
                     <div 
-                      className="projectCard card my-1"
+                      className="card my-1"
                       id={project.id}
                       key={project.title}
                     >
-                      <img className="card-img-top pt-1"
+                      <img className="card-img img-fluid pt-1"
                       src={project.src}
                       alt={project.title}
                       />
                       <div className="card-body">
-                        <p className="card-title text-dark fs-1">{project.title}</p>
-                        <p className="card-subtitle text-muted">{project.description}</p>
+                        <div>
+                          <p className="card-title text-dark fs-1">{project.title}</p>
+                          <p className="card-subtitle text-muted">{project.description}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 )
               })}
+              </div>
+            ) : (" ")}
+
+            {backEndVisible ? (
+              <div className="row">
+                {backEndProjects.map((project) => {
+                  return (
+                    <div className='col-12 col-lg-4'>
+                      <div 
+                        className="card my-1"
+                        id={project.id}
+                        key={project.title}
+                      >
+                        <img className="card-img img-fluid pt-1"
+                        src={project.src}
+                        alt={project.title}
+                        />
+                        <div className="card-body">
+                          <div>
+                            <p className="card-title text-dark text-center fs-2">{project.title}</p>
+                            <p className="card-subtitle text-muted">{project.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            ) : (" ")}
           </div>
         </div>
       </div>

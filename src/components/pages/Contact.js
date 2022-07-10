@@ -4,7 +4,6 @@ import Typewriter from 'typewriter-effect';
 import "./style.css";
 const githubLogo = require('../../assets/images/icons/socials/github.png');
 const linkedInLogo = require('../../assets/images/icons/socials/linkedin.png');
-const mailIcon = require('../../assets/images/icons/nav-icons/mail-96.png');
 
 function Contact() {
   // error handling for form fields
@@ -146,8 +145,8 @@ function Contact() {
       <section className="d-flex justify-content-center mt-2">
         <div className="window text-light col-lg-8 col-12 shadow">
           
-          <div className="windowBar px-1 d-flex justify-content-between">
-            <div>
+          <div className="windowBar py-1 d-flex justify-content-between">
+            <div className="windowTitle px-2">
               <i className="bi bi-envelope"></i> contactForm.js
             </div>
             <div className="px-1">
