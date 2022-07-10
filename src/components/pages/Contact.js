@@ -104,7 +104,7 @@ function Contact() {
             <p>$ Interested in contacting me? Check out more of my work on GitHub, reach out via LinkedIn, or fill out the form below!</p>
             
             <section className="socials d-flex justify-content-center">
-              <div className="github">
+              <div className="socialLink github">
                 <a 
                   href="https://github.com/blindsweatyhansolo" 
                   target="_blank" 
@@ -113,7 +113,7 @@ function Contact() {
                   <img src={githubLogo} alt="Github Logo" className="socialIcon"/>
                 </a>
               </div>
-              <div className="linkedin">
+              <div className="socialLink linkedin">
                 <a 
                   href="https://www.linkedin.com/in/jack-semidey-774313222/" 
                   target="_blank" 

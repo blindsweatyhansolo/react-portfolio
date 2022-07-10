@@ -52,9 +52,9 @@ function About() {
                 ""
               ) : (
                 <div className="hero text-center">
-                  ================<br />
-                  Hi, I'm Jack! <br />
-                  ================ <br />
+                  ====================<br />
+                  Hi, I'm Jack Semidey! <br />
+                  ==================== <br />
                   <p>Coffee house supervisor turned Full Stack Web Developer.</p>
                   <p>Film geek, amateur wood-worker, Dungeons and Dragons nerd, and overall curious guy.
                     I like to build things on the web, and have a thirst for knowledge.
