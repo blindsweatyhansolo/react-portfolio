@@ -1,0 +1,10 @@
+.footer {
+  border-top: solid 2px;
+  padding: 10px;
+  background-color: gray;
+}
+
+.menuIcon {
+  height: 30px;
+  width: auto;
+}

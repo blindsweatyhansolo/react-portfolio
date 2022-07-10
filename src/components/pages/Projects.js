@@ -4,32 +4,32 @@ const folderIconClosed = require('../../assets/images/icons/nav-icons/folder-clo
 const folderIconOpen = require('../../assets/images/icons/nav-icons/folder-open.png');
 
 function Projects() {
-  // array to hold project data
+  // array to hold back end project data
   const backEndProjects = [
-    {
-      id: 'employee-tracker',
-      title: 'Employee Tracker',
-      description: 'CLI Application for managers to navigate departments, roles, and employees in a SQL database.',
-      github: 'https://github.com/blindsweatyhansolo/employee-tracker',
-      src: require('../../assets/images/screenshots/employeetracker.gif')
-    },
     {
       id: 'thought-spot',
       title: 'Thought Spot',
-      description: 'Back-end for a faux social media site, using MongoDB.',
+      description: 'Back-end for a faux social media site, using MongoDB. Perform CRUD operations on users, thoughts, and reactions to thoughts, like those found on many current social media sites.',
       github: 'https://github.com/blindsweatyhansolo/thought-spot',
       src: require('../../assets/images/screenshots/thoughtspot.gif')
     },
     {
-      id: 'password-generator',
-      title: 'Password Generator',
-      description: 'Generate a simple or complex password for your account.',
-      github: 'https://github.com/blindsweatyhansolo/PasswordGenerator',
-      liveURL: 'https://blindsweatyhansolo.github.io/PasswordGenerator/',
-      src: require('../../assets/images/screenshots/passwordgenerator.png')
+      id: 'employee-tracker',
+      title: 'Employee Tracker',
+      description: 'Team management tool CLI Application for managers to navigate departments, roles, and employees in a SQL database.',
+      github: 'https://github.com/blindsweatyhansolo/employee-tracker',
+      src: require('../../assets/images/screenshots/employeetracker.gif')
+    },
+    {
+      id: 'ecommerce-backend',
+      title: 'E-Commerce Backend',
+      description: 'Back-end for a faux e-commerce site, using MySQL. Perform CRUD operations on products, product categories, and product tags.',
+      github: 'https://github.com/blindsweatyhansolo/e-commerce-backend',
+      src: require('../../assets/images/screenshots/ecommercebackend.gif')
     }
   ];
 
+  // array to hold front end project data
   const frontEndProjects =[
     {
       id: 'technically-speaking',
@@ -77,10 +77,12 @@ function Projects() {
       description: 'Calendar app to help you schedule your day.',
       github: 'https://github.com/blindsweatyhansolo/weekdayscheduler',
       liveURL: 'https://blindsweatyhansolo.github.io/weekdayscheduler/',
-      src: require('../../assets/images/screenshots/weekdayscheduler.png')
+      src: require('../../assets/images/screenshots/weekdayscheduler cropped.png')
     }
   ];
 
+  // useState variables for swapping folder icons from closed to open, and separating
+  // projects for display according to selection
   const [frontEndVisible, setFrontEndVisible] = useState(false);
   const [backEndVisible, setBackEndVisible] = useState(false);
   const [folderFrontEndOpen, setFrontEndFolderOpen] = useState(false);
@@ -138,18 +140,31 @@ function Projects() {
                 return (
                   <div className='col-12 col-lg-4'>
                     <div 
-                      className="card my-1"
+                      className="card card-flip m-1 rounded shadow"
                       id={project.id}
                       key={project.title}
                     >
-                      <img className="card-img img-fluid pt-1"
-                      src={project.src}
-                      alt={project.title}
-                      />
+                    <div className="card-front">
                       <div className="card-body">
-                        <div>
+                        <img className="card-img img-fluid pt-1"
+                        src={project.src}
+                        alt={project.title}
+                        />
+                          <div>
+                            <p className="card-title text-dark text-center fs-1">{project.title}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="card-back d-flex align-items-center">
+                        <div className="card-body">
                           <p className="card-title text-dark fs-1">{project.title}</p>
-                          <p className="card-subtitle text-muted">{project.description}</p>
+                          <p className="card-text text-dark">{project.description}</p>
+                          <div className="d-flex justify-content-evenly pt-1">
+                            <a href={project.liveURL} className="btn btn-primary" target="_blank" rel="noreferrer">
+                              <i className="bi bi-globe"></i> See Live</a>
+                            <a href={project.github} className="btn btn-primary" target="_blank" rel="noreferrer">
+                            <i className="bi bi-github"></i> See Repo</a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -165,18 +180,29 @@ function Projects() {
                   return (
                     <div className='col-12 col-lg-4'>
                       <div 
-                        className="card my-1"
+                        className="card card-flip my-1 rounded shadow"
                         id={project.id}
                         key={project.title}
                       >
-                        <img className="card-img img-fluid pt-1"
-                        src={project.src}
-                        alt={project.title}
-                        />
-                        <div className="card-body">
-                          <div>
-                            <p className="card-title text-dark text-center fs-2">{project.title}</p>
+                        <div className="card-front">
+                          <div className="card-body">
+                            <img className="card-img img-fluid pt-1"
+                            src={project.src}
+                            alt={project.title}
+                            />
+                            <div>
+                              <p className="card-title text-dark text-center fs-2">{project.title}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="card-back d-flex align-items-center">
+                          <div className="card-body">
+                            <p className="card-title text-dark fs-2">{project.title}</p>
                             <p className="card-subtitle text-muted">{project.description}</p>
+                            <div className="d-flex justify-content-center pt-1">
+                              <a href={project.github} className="btn btn-primary" target="_blank" rel="noreferrer">
+                              <i className="bi bi-github"></i> See Repo</a>
+                            </div>
                           </div>
                         </div>
                       </div>

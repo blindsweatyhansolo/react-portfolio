@@ -8,16 +8,15 @@ const resumeIcon = require('../../assets/images/icons/nav-icons/pdf.png');
 
 function Nav({ currentPage, handlePageChange }) {
   return (
-  <ul className="nav nav-tabs d-flex justify-content-around no-wrap">
+  <ul className="nav navbar d-flex justify-content-around">
       <li className="nav-item">
         <div className="d-flex flex-column text-center">
           <a
             href="#home"
             onClick={() => handlePageChange('Home')}
-            className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}
           >
-          <img src={terminalIcon} alt="" />
-          <p>Home</p>
+          <img src={terminalIcon} alt="" className="navIcon"/>
+          <p className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}>Home</p>
           </a>
         </div>
       </li>
@@ -27,10 +26,10 @@ function Nav({ currentPage, handlePageChange }) {
           <a
             href="#about"
             onClick={() => handlePageChange('About')}
-            className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
           >
-            <img src={aboutIcon} alt="" />
-          <p>About</p>
+            <img src={aboutIcon} alt="" className="navIcon"/>
+            
+          <p className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}>About</p>
           </a>
         </div>
       </li>
@@ -40,10 +39,9 @@ function Nav({ currentPage, handlePageChange }) {
           <a
             href="#blog"
             onClick={() => handlePageChange('Projects')}
-            className={currentPage === 'Projects' ? 'nav-link active' : 'nav-link'}
           >
-            <img src={folderIcon} alt=""/>
-          <p>Projects</p>
+            <img src={folderIcon} alt="" className="navIcon"/>
+          <p className={currentPage === 'Projects' ? 'nav-link active' : 'nav-link'}>Projects</p>
           </a>
         </div>
       </li>
@@ -53,10 +51,9 @@ function Nav({ currentPage, handlePageChange }) {
           <a
             href="#contact"
             onClick={() => handlePageChange('Contact')}
-            className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
           >
-            <img src={emailIcon} alt=""/>
-            <p>Contact</p>
+            <img src={emailIcon} alt="" className="navIcon"/>
+            <p className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}>Contact</p>
           </a>
         </div>
       </li>
@@ -68,7 +65,7 @@ function Nav({ currentPage, handlePageChange }) {
             target="_blank" 
             rel="noreferrer"
             className="text-decoration-none">
-            <img src={resumeIcon} alt="" />
+            <img src={resumeIcon} alt="" className="navIcon"/>
             <p>Resume.pdf</p>
           </a>
         </div>
