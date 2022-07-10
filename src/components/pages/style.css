@@ -26,10 +26,6 @@
   display: inline-block;
 }
 
-.hero {
-  text-align: center;
-}
-
 .imgProfile {
   max-width: 100%;
   max-height: 50vh;

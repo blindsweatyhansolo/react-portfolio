@@ -34,7 +34,7 @@ function Projects() {
     {
       id: 'technically-speaking',
       title: 'Technically Speaking',
-      description: 'A simple blog for sharing ideas and thoughts.',
+      description: 'A simple CMS-style blog for sharing ideas and thoughts. Visitors can access the homepage, but further features like commenting and posting are hidden behind registration.',
       github: 'https://github.com/blindsweatyhansolo/tech-blog',
       liveURL: 'https://bshs-tech-blog.herokuapp.com/',
       src: require('../../assets/images/screenshots/technicallyspeaking.gif')
@@ -42,7 +42,7 @@ function Projects() {
     {
       id: 'ballz-and-booze',
       title: 'Ballz & Booze',
-      description: 'Application for finding scheduled NBA games, and bars/breweries to watch them in.',
+      description: 'Navigate March Madness with this application for finding scheduled NBA games, and bars/breweries to watch them in. Add or remove bars to your favorites. Utilizies calls from API-NBA and OpenBrewery DB.',
       github: 'https://github.com/blindsweatyhansolo/ballzandbooze',
       liveURL: 'https://blindsweatyhansolo.github.io/ballzandbooze/',
       src: require('../../assets/images/screenshots/ballzandbooze.gif')
@@ -50,7 +50,7 @@ function Projects() {
     {
       id: 'budget-tracker',
       title: 'Budget Tracker',
-      description: 'Keep track of your expenses online or offline with this PWA.',
+      description: 'Keep track of your expenses with or without network access with this simple budget tracker. Can be downloaded as a PWA for offline capabilities.',
       github: 'https://github.com/blindsweatyhansolo/budget-tracker',
       liveURL: 'https://bshs-budget-tracker.herokuapp.com/',
       src: require('../../assets/images/screenshots/BudgetTracker.gif')
@@ -58,7 +58,7 @@ function Projects() {
     {
       id: 'weather-dashboard',
       title: 'Weather Dashboard',
-      description: 'Find forecast information for any searched city.',
+      description: 'Find forecast information for any searched city using calls to OneCall API from OpenWeather. Saved search history, current weather, five-day forecast, including UV index.',
       github: 'https://github.com/blindsweatyhansolo/weatherdashboard',
       liveURL: 'https://blindsweatyhansolo.github.io/weatherdashboard/',
       src: require('../../assets/images/screenshots/weatherdashboard.png')
@@ -66,7 +66,7 @@ function Projects() {
     { 
       id: 'pitchr',
       title: 'Pitchr',
-      description: 'Pitch, vote and comment on ideas to fellow web developers. (Requires registration)',
+      description: 'Idea board for fellow developers to pitch project ideas. Comment on and save ideas to your favorites, while managing your own submissions via the dashboard. Requires registration.',
       github: 'https://github.com/blindsweatyhansolo/pitchr',
       liveURL: 'https://pitchr314.herokuapp.com/',
       src: require('../../assets/images/screenshots/pitchr.png')
@@ -74,7 +74,7 @@ function Projects() {
     {
       id: 'workday-scheduler',
       title: 'Workday Scheduler',
-      description: 'Calendar app to help you schedule your day.',
+      description: 'Easy to use calendar app to help you schedule your day. Single day set to standard work hours. Feel rejoiced to hit the Clear Your Day! button.',
       github: 'https://github.com/blindsweatyhansolo/weekdayscheduler',
       liveURL: 'https://blindsweatyhansolo.github.io/weekdayscheduler/',
       src: require('../../assets/images/screenshots/weekdayscheduler cropped.png')
@@ -89,9 +89,9 @@ function Projects() {
   const [folderBackEndOpen, setBackEndFolderOpen] = useState(false);
 
   return (
-    <section className="projects d-flex justify-content-center mt-4">
+    <section className="projects d-flex justify-content-center my-2">
 
-      <div className="window text-light col-lg-8 col-12 shadow row">
+      <div className="window text-light col-lg-8 col-12 shadow-lg row">
         
         <div className="windowBar py-1 d-flex justify-content-between">
           <div className="windowTitle px-2">
@@ -138,13 +138,13 @@ function Projects() {
               <div className="row">
               {frontEndProjects.map((project) => {
                 return (
-                  <div className='col-12 col-lg-4'>
+                  <div className='col-12 col-lg-6 p-1'>
                     <div 
-                      className="card card-flip m-1 rounded shadow"
+                      className="card card-flip rounded shadow-lg h-100"
                       id={project.id}
                       key={project.title}
                     >
-                    <div className="card-front">
+                    <div className="card-front d-flex align-items-center">
                       <div className="card-body">
                         <img className="card-img img-fluid pt-1"
                         src={project.src}
@@ -159,7 +159,7 @@ function Projects() {
                         <div className="card-body">
                           <p className="card-title text-dark fs-1">{project.title}</p>
                           <p className="card-text text-dark">{project.description}</p>
-                          <div className="d-flex justify-content-evenly pt-1">
+                          <div className="d-flex justify-content-around pt-1 flex-wrap">
                             <a href={project.liveURL} className="btn btn-primary" target="_blank" rel="noreferrer">
                               <i className="bi bi-globe"></i> See Live</a>
                             <a href={project.github} className="btn btn-primary" target="_blank" rel="noreferrer">
@@ -178,13 +178,13 @@ function Projects() {
               <div className="row">
                 {backEndProjects.map((project) => {
                   return (
-                    <div className='col-12 col-lg-4'>
+                    <div className='col-12 col-lg-6 p-1'>
                       <div 
-                        className="card card-flip my-1 rounded shadow"
+                        className="card card-flip my-1 h-100 rounded shadow-lg"
                         id={project.id}
                         key={project.title}
                       >
-                        <div className="card-front">
+                        <div className="card-front d-flex align-items-center">
                           <div className="card-body">
                             <img className="card-img img-fluid pt-1"
                             src={project.src}

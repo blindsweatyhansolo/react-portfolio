@@ -9,7 +9,7 @@ function Home() {
   return (
     <div className="container d-flex justify-content-center">
 
-      <div className='my-5 dosContainer text-light col-12 col-lg-6 shadow-lg'>
+      <div className='my-2 dosContainer text-light col-12 col-lg-6 shadow-lg fade-in'>
 
         <div className='px-1 text-light d-flex justify-content-between'>
           <div>
@@ -46,7 +46,7 @@ function Home() {
           {hidden ? (
             ""
           ) : (
-            <div className='hero'>
+            <div className='hero text-center'>
               ================<br />
               Hello World! <br />
               ================ <br />

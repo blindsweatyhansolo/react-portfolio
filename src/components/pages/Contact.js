@@ -84,7 +84,7 @@ function Contact() {
     <div className="container">
       
       <section className="contact d-flex justify-content-center">
-        <div className="mt-5 mb-2 dosContainer text-light col-12 col-lg-6 shadow">
+        <div className="my-2 dosContainer text-light col-12 col-lg-6 shadow-lg">
           <div className='px-1 d-flex justify-content-between'>
             <div>
               <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack
@@ -143,7 +143,7 @@ function Contact() {
   
     {hidden ? ("") : (
       <section className="d-flex justify-content-center mt-2">
-        <div className="window text-light col-lg-8 col-12 shadow">
+        <div className="window text-light col-lg-8 col-12 shadow-lg">
           
           <div className="windowBar py-1 d-flex justify-content-between">
             <div className="windowTitle px-2">

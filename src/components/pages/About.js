@@ -17,7 +17,7 @@ function About() {
     <div className="container">
 
         <section className="about d-flex justify-content-center">
-          <div className="mt-5 mb-2 dosContainer text-light col-12 col-lg-6 shadow">
+          <div className="my-2 dosContainer text-light col-12 col-lg-6 shadow-lg">
             <div className='dosBar px-1 d-flex justify-content-between'>
               <div>
                 <i className="bi bi-terminal"></i> JSEM64:/c/Users/Jack/
@@ -51,7 +51,7 @@ function About() {
               {hidden ? (
                 ""
               ) : (
-                <div className="hero">
+                <div className="hero text-center">
                   ================<br />
                   Hi, I'm Jack! <br />
                   ================ <br />
@@ -82,7 +82,7 @@ function About() {
 
       {hidden ? ("") : (
         <section className="profileImage col-12 d-flex justify-content-center">
-          <div className="window text-light col-lg-8 col-12 shadow">
+          <div className="window text-light col-lg-8 col-12 shadow-lg">
             
             <div className="windowBar py-1 d-flex justify-content-between">
               <div className="windowTitle px-2">

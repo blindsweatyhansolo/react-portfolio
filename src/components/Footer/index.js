@@ -8,7 +8,9 @@ const Footer = () => {
   return (
     <footer className="footer fixed-bottom d-flex justify-content-between">
       <div>
-        <img src={menuIcon} className="menuIcon" alt=""/>
+        <a href="https://github.com/blindsweatyhansolo/react-portfolio" target="_blank" rel="noreferrer" title="Check out the repo for this portfolio">
+          <img src={menuIcon} className="menuIcon" alt=""/>
+        </a>
       </div>
       <div className="">
         <a href="https://github.com/blindsweatyhansolo" target="_blank" rel="noreferrer">
