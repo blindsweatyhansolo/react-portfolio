@@ -6,7 +6,7 @@ Personal portfolio created with Create-React-App. Contains a short bio, picture,
 
 Deployed URL: [J. Semidey Portfolio](https://blindsweatyhansolo.github.io/react-portfolio/)
 
-![Screenshot of portfolio]()
+![Screenshot of portfolio](./src/assets/images/react-portfolioScreenshot.png)
 
 
 ## Additional Information
