@@ -32,6 +32,14 @@ function Projects() {
   // array to hold front end project data
   const frontEndProjects =[
     {
+      id: 'popcorn-pals',
+      title: 'Popcorn Pals',
+      description: 'Search for movies, rate and review titles, and suggest them to your friends. See a quick list of suggestions from the home page, or visit your profile for a detailed list of all suggestions and rated titles.',
+      github: 'https://github.com/blindsweatyhansolo/popcornpals',
+      liveURL: 'https://popcornpals.herokuapp.com/',
+      src: require('../../assets/images/screenshots/popcornpals.gif')
+    },
+    {
       id: 'technically-speaking',
       title: 'Technically Speaking',
       description: 'A simple CMS-style blog for sharing ideas and thoughts. Visitors can access the homepage, but further features like commenting and posting are hidden behind registration.',
