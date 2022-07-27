@@ -32,7 +32,7 @@ function Projects() {
   // array to hold front end project data
   const frontEndProjects =[
     {
-      id: 'popcorn-pals',
+      id: 'popcornpals',
       title: 'Popcorn Pals',
       description: 'Search for movies, rate and review titles, and suggest them to your friends. See a quick list of suggestions from the home page, or visit your profile for a detailed list of all suggestions and rated titles.',
       github: 'https://github.com/blindsweatyhansolo/popcornpals',
