@@ -61,7 +61,7 @@ function Nav({ currentPage, handlePageChange }) {
       <li className="nav-item">
         <div className="d-flex flex-column text-center">
           <a 
-            href="https://drive.google.com/file/d/1ezNgD3oMGJNCJfbIR1ffJVobSfbkTePx/view?usp=sharing" 
+            href="https://drive.google.com/file/d/1cCGkrZqUzzfAjRuxCgsxX4HswyWI50vc/view?usp=sharing" 
             target="_blank" 
             rel="noreferrer"
             className="text-decoration-none">
